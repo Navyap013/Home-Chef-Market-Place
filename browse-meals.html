@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Meals - Bengaluru Home Chef Marketplace</title>
+    <style>
+         body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: url('backgroundmain.png') no-repeat center center fixed;
+    background-size: cover;
+}      
+/* Header Styling */
+       header {
+    background: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background */
+    color: white;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    color: rgb(20, 221, 37);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 1.5em;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: rgba(244, 32, 32, 0.8);
+} 
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(244, 32, 32, 0.9);
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    text-align: center;
+    padding: 2em 1em;
+}
+
+/* Search Section */
+#search-meals {
+    margin-bottom: 1.5em;
+}
+
+#meal-search {
+    padding: 0.8em;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#meal-search-btn {
+    background-color: rgba(244, 32, 32, 0.9);
+    color: white;
+    padding: 0.8em 1.2em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#meal-search-btn:hover {
+    background-color: rgba(244, 32, 32, 1);
+}
+
+/* Meal Grid */
+.meal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+    padding: 1em;
+}
+
+/* Meal Card */
+.meal-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.meal-card:hover {
+    transform: scale(1.03);
+}
+
+.meal-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid rgba(244, 32, 32, 0.5);
+}
+
+.meal-info {
+    padding: 1em;
+}
+
+/* Meal Name */
+.meal-info h3 {
+    font-size: 1.3em;
+    color: rgba(244, 32, 32, 0.9);
+    margin: 0.5em 0;
+}
+
+/* Meal Description */
+.meal-info p {
+    font-size: 1em;
+    color: #555;
+    margin: 0.5em 0;
+}
+
+/* Price Styling */
+.meal-info .price {
+    font-size: 1.2em;
+    color: rgba(244, 32, 32, 0.9);
+    font-weight: bold;
+}
+
+/* Order Button */
+.order-btn {
+    background-color: rgba(244, 32, 32, 0.9);
+    color: white;
+    border: none;
+    padding: 0.8em 1.2em;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.order-btn:hover {
+    background-color: rgba(244, 32, 32, 1);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bengaluru Home Chef Marketplace</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse-chefs.html">Browse Chefs</a></li>
+                <li><a href="browse-meals.html">Browse Meals</a></li>
+                <li><a href="become-a-chef.html">Become a Chef</a></li>
+                <li><a href="my-orders.html">My Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Browse All Meals</h2>
+        <p>Explore a wide variety of delicious meals prepared by expert chefs!</p>
+
+        <!-- Search Section -->
+        <section id="search-meals">
+            <input type="text" id="meal-search" placeholder="Search for dishes..." />
+            <button id="meal-search-btn">Search</button>
+        </section>
+
+        <!-- Meal Grid -->
+        <section id="meal-grid">
+            <div class="meal-grid">
+                <!-- Meal 1 from Chef Priya -->
+                <div class="meal-card">
+                    <img src="idli-sambhar.jpg" alt="Idli Sambhar">
+                    <div class="meal-info">
+                        <h3>Idli Sambhar</h3>
+                        <p>Classic South Indian breakfast - Soft steamed idlis served with hot sambhar and coconut chutney.</p>
+                        <p class="price">₹80</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Meal 2 from Chef Priya -->
+                <div class="meal-card">
+                    <img src="dosa-chutney.jpg" alt="Dosa with Coconut Chutney">
+                    <div class="meal-info">
+                        <h3>Dosa with Coconut Chutney</h3>
+                        <p>Crispy dosa served with tangy coconut chutney and flavorful sambhar.</p>
+                        <p class="price">₹90</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Meal 3 from Chef Priya -->
+                <div class="meal-card">
+                    <img src="vada-sambar.jpg" alt="Vada with Sambar">
+                    <div class="meal-info">
+                        <h3>Vada with Sambar</h3>
+                        <p>Crispy vadas served with delicious sambar and chutney.</p>
+                        <p class="price">₹75</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Meal 4 from Chef Rohan -->
+                <div class="meal-card">
+                    <img src="butter-chicken.jpg" alt="Butter Chicken">
+                    <div class="meal-info">
+                        <h3>Butter Chicken</h3>
+                        <p>Succulent chicken pieces cooked in a creamy tomato-based gravy.</p>
+                        <p class="price">₹250</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Meal 5 from Chef Rohan -->
+                <div class="meal-card">
+                    <img src="rogan-josh.jpg" alt="Rogan Josh">
+                    <div class="meal-info">
+                        <h3>Rogan Josh</h3>
+                        <p>Rich and flavorful Kashmiri mutton curry cooked with aromatic spices.</p>
+                        <p class="price">₹300</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Meal 6 from Chef Rohan -->
+                <div class="meal-card">
+                    <img src="aloo-gobi.jpg" alt="Aloo Gobi">
+                    <div class="meal-info">
+                        <h3>Aloo Gobi</h3>
+                        <p>A comforting vegetarian dish made with potatoes and cauliflower, cooked in a blend of spices.</p>
+                        <p class="price">₹180</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Meal 7 from Chef Neha -->
+                <div class="meal-card">
+                    <img src="vegan-burrito-bowl.jpg" alt="Vegan Burrito Bowl">
+                    <div class="meal-info">
+                        <h3>Vegan Burrito Bowl</h3>
+                        <p>A wholesome and nutritious plant-based burrito bowl filled with rice, beans, veggies, and salsa.</p>
+                        <p class="price">₹150</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Meal 8 from Chef Neha -->
+                <div class="meal-card">
+                    <img src="chickpea-salad.jpg" alt="Chickpea Salad">
+                    <div class="meal-info">
+                        <h3>Chickpea Salad</h3>
+                        <p>A refreshing salad with chickpeas, veggies, and a zesty lemon dressing.</p>
+                        <p class="price">₹120</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Meal 9 from Chef Neha -->
+                <div class="meal-card">
+                    <img src="tofu-stir-fry.jpg" alt="Tofu Stir Fry">
+                    <div class="meal-info">
+                        <h3>Tofu Stir Fry</h3>
+                        <p>Stir-fried tofu with a mix of colorful veggies and a savory sauce.</p>
+                        <p class="price">₹180</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Meal 10 from Chef Manoj -->
+                <div class="meal-card">
+                    <img src="handcrafted-pizza.jpg" alt="Handcrafted Pizza">
+                    <div class="meal-info">
+                        <h3>Handcrafted Pizza</h3>
+                        <p>Thin-crust pizza with fresh toppings like mozzarella, olives, and tomatoes.</p>
+                        <p class="price">₹300</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Meal 11 from Chef Manoj -->
+                <div class="meal-card">
+                    <img src="lasagna.jpg" alt="lasagna">
+                    <div class="meal-info">
+                        <h3>Handcrafted Pasta</h3>
+                        <p>Delicious pasta made with fresh ingredients and served with a creamy sauce.</p>
+                        <p class="price">₹350</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Meal 12 from Chef Anita -->
+                <div class="meal-card">
+                    <img src="chole-bhature.jpg" alt="Chole Bhature">
+                    <div class="meal-info">
+                        <h3>Chole Bhature</h3>
+                        <p>Classic Punjabi dish of spicy chickpeas served with fluffy fried bread (bhature).</p>
+                        <p class="price">₹180</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Meal 13 from Chef Anita -->
+                <div class="meal-card">
+                    <img src="sarson-da-saag.jpg" alt="Sarson Da Saag">
+                    <div class="meal-info">
+                        <h3>Sarson Da Saag</h3>
+                        <p>Traditional Punjabi dish made with mustard greens and served with makki di roti (corn flatbread).</p>
+                        <p class="price">₹150</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bengaluru Home Chef Marketplace</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

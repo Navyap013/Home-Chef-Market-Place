@@ -1,0 +1,256 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: url('backgroundmain.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header Styling */
+header {
+    background: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background */
+    color: white;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    color: rgb(20, 221, 37);;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 1.5em;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: rgba(244, 32, 32, 0.8);
+}
+
+/* Main Content Styling */
+main {
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2em auto;
+    max-width: 1200px;
+}
+
+/* Hero Section */
+#hero {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 3em;
+    text-align: center;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+#hero h2 {
+    color: #333;
+    margin-bottom: 1em;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-container input[type="text"] {
+    flex-grow: 1;
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 1em;
+}
+
+.search-container button {
+    background-color: rgba(244, 32, 32, 0.7);
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: rgba(244, 32, 32, 1);
+}
+
+/* Featured Sections */
+#featured-chefs, #featured-meals {
+    margin-bottom: 3em;
+}
+
+#featured-chefs h2, #featured-meals h2 {
+    color: #333;
+    margin-bottom: 1.5em;
+    border-bottom: 2px solid rgba(244, 32, 32, 0.5);
+    padding-bottom: 0.5em;
+}
+
+/* Card Grids */
+.chef-grid, .meal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+}
+
+/* Chef Card & Meal Card */
+.chef-card, .meal-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    text-align: center;
+}
+
+.chef-card img, .meal-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    background-color: #f0f0f0;
+}
+
+.chef-card h3, .meal-card h3 {
+    padding: 1em;
+    margin: 0;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.chef-card p, .meal-card p {
+    padding: 0 1em 1em;
+    margin: 0;
+    color: #777;
+}
+
+.meal-card .price {
+    display: block;
+    padding: 0 1em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    color: rgba(244, 32, 32, 0.8);
+}
+
+/* Buttons */
+.chef-card button.view-chef, .meal-card button.order-now {
+    background-color: rgba(244, 32, 32, 0.7);
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    border-radius: 0 0 8px 8px;
+}
+
+.chef-card button.view-chef:hover, .meal-card button.order-now:hover {
+    background-color: rgba(244, 32, 32, 1);
+}
+
+button.view-all {
+    background-color: transparent;
+    color: rgba(244, 32, 32, 0.7);
+    border: 1px solid rgba(244, 32, 32, 0.7);
+    padding: 0.8em 1.5em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    display: block;
+    margin: 2em auto 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.view-all:hover {
+    background-color: rgba(244, 32, 32, 0.7);
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: rgba(51, 51, 51, 0.8);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+}
+
+/* Parallax Effect Section */
+.parallax-section {
+    background-image: url('backgroundmain.png');
+    height: 300px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.parallax-content {
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(244, 32, 32, 0.7);
+    border-radius: 8px;
+}
+button {
+    background-color:rgba(244, 32, 32, 0.7); /* Matching search button color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover effect */
+button:hover {
+    background-color:rgba(244, 32, 32, 0.7);
+}
+
+/* Ensuring consistency across all buttons */
+.search-container button, 
+.chef-card button {
+    display: inline-block;
+    width: auto;
+    font-weight: bold;
+}
+
+/* Center alignment for the View All Chefs button */
+.view-all-chefs {
+    text-align: center;
+    margin-top: 20px;
+}

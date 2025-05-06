@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - Bengaluru Home Chef Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #ff9800;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Orders Section */
+#orders {
+    background: white;
+    padding: 30px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#orders h2 {
+    color: #ff9800;
+    text-align: center;
+}
+
+.order-card {
+    background: #fff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-card h3 {
+    margin: 0;
+    color: #ff9800;
+}
+
+.order-card p {
+    margin: 5px 0;
+}
+
+.status {
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.status.pending {
+    color: #d9534f;
+    background: #f2dede;
+}
+
+.status.delivered {
+    color: #5cb85c;
+    background: #dff0d8;
+}
+
+.status.in-progress {
+    color: #f0ad4e;
+    background: #fcf8e3;
+}
+
+.view-details {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.view-details:hover {
+    background-color: #e68900;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+</style>
+<body>
+    <header>
+        <h1>Bengaluru Home Chef Marketplace</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse-chefs.html">Browse Chefs</a></li>
+                <li><a href="browse-meals.html">Browse Meals</a></li>
+                <li><a href="become-a-chef.html">Become a Chef</a></li>
+                <li><a href="my-orders.html">My Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="orders">
+            <h2>Your Orders</h2>
+            <p>Here is a list of your current and past orders placed through the Bengaluru Home Chef Marketplace.</p>
+            
+            <!-- Order 1 -->
+            <div class="order-card">
+                <h3>Order #12345</h3>
+                <p><strong>Chef:</strong> Chef Priya (South Indian Cuisine)</p>
+                <p><strong>Meal:</strong> Idli Sambhar</p>
+                <p><strong>Price:</strong> ₹80</p>
+                <p><strong>Status:</strong> <span class="status pending">Pending</span></p>
+                <p><strong>Order Date:</strong> April 1, 2025</p>
+                <button class="view-details">View Details</button>
+            </div>
+
+            <!-- Order 2 -->
+            <div class="order-card">
+                <h3>Order #12346</h3>
+                <p><strong>Chef:</strong> Chef Rohan (North Indian Cuisine)</p>
+                <p><strong>Meal:</strong> Butter Chicken</p>
+                <p><strong>Price:</strong> ₹250</p>
+                <p><strong>Status:</strong> <span class="status delivered">Delivered</span></p>
+                <p><strong>Order Date:</strong> March 28, 2025</p>
+                <button class="view-details">View Details</button>
+            </div>
+
+            <!-- Order 3 -->
+            <div class="order-card">
+                <h3>Order #12347</h3>
+                <p><strong>Chef:</strong> Chef Neha (Italian Cuisine)</p>
+                <p><strong>Meal:</strong> Spaghetti Carbonara</p>
+                <p><strong>Price:</strong> ₹300</p>
+                <p><strong>Status:</strong> <span class="status in-progress">In Progress</span></p>
+                <p><strong>Order Date:</strong> April 2, 2025</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bengaluru Home Chef Marketplace</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

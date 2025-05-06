@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Bengaluru Home Chef Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #ff9800;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Payment Form Section */
+#payment-form {
+    background: white;
+    padding: 30px;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#payment-form h2 {
+    color: #ff9800;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+    width: 80%;
+    margin-top: 10px;
+    text-align: left;
+}
+
+input, textarea, select {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+}
+
+#total-amount {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #d9534f;
+}
+
+/* Submit Button */
+button {
+    background-color: #ff9800;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 80%;
+}
+
+button:hover {
+    background-color: #e68900;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+</style>
+<body>
+    <header>
+            <h1>Bengaluru Home Chef Marketplace</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse-chefs.html">Browse Chefs</a></li>
+                    <li><a href="browse-meals.html">Browse Meals</a></li>
+                    <li><a href="become-a-chef.html">Become a Chef</a></li>
+                    <li><a href="my-orders.html">My Orders</a></li>
+                </ul>
+            </nav>     
+    </header>
+
+    <main>
+        <section id="payment-form">
+            <h2>Order Payment</h2>
+            <form id="orderForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="address">Delivery Address:</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+
+                <label for="meal-price">Meal Price (₹):</label>
+                <input type="number" id="meal-price" name="meal-price" required>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+                <label for="payment-mode">Mode of Payment:</label>
+                <select id="payment-mode" name="payment-mode" required>
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                </select>
+
+                <div id="total-amount">
+                    <strong>Total Amount: ₹<span id="total">0</span></strong>
+                </div>
+
+                <button type="submit">Confirm Payment</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bengaluru Home Chef Marketplace</p>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const mealPriceInput = document.getElementById("meal-price");
+        const quantityInput = document.getElementById("quantity");
+        const totalSpan = document.getElementById("total");
+        const form = document.getElementById("orderForm");
+    
+        // Function to calculate total price
+        function calculateTotal() {
+            const price = parseFloat(mealPriceInput.value) || 0;
+            const quantity = parseInt(quantityInput.value) || 1;
+            const total = price * quantity;
+            totalSpan.textContent = total.toFixed(2);
+        }
+    
+        // Update total when price or quantity changes
+        mealPriceInput.addEventListener("input", calculateTotal);
+        quantityInput.addEventListener("input", calculateTotal);
+    
+        // Handle form submission
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent actual form submission
+            
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const email = document.getElementById("email").value;
+            const address = document.getElementById("address").value;
+            const paymentMode = document.getElementById("payment-mode").value;
+            const totalAmount = totalSpan.textContent;
+    
+            // Simulate successful order placement
+            console.log(`Form submitted with name: ${name}, phone: ${phone}, email: ${email}, address: ${address}, payment mode: ${paymentMode}, total amount: ${totalAmount}`);
+            alert(`Thank you, ${name}! Your order of ₹${totalAmount} has been placed successfully. Payment Mode: ${paymentMode}`);
+    
+            // Redirect to homepage
+            window.location.href = "index.html";
+        });
+    });
+</script>
+    
+</body>
+</html>

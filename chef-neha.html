@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Neha - Bengaluru Home Chef Marketplace</title>
+    <style>
+         body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: url('backgroundmain.png') no-repeat center center fixed;
+    background-size: cover;
+}      
+/* Header Styling */
+header {
+    background: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background */
+    color: white;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    color: rgb(20, 221, 37);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 1.5em;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: rgba(244, 32, 32, 0.8);
+} 
+/* === Chef Profile Page Styles === */
+.chef-profile {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2em auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1em;
+    border: 3px solid rgba(244, 32, 32, 0.7);
+}
+
+.chef-profile h2 {
+    margin: 0.5em 0;
+    color: rgba(244, 32, 32, 0.8);
+}
+
+.chef-profile p {
+    font-size: 1em;
+    color: #555;
+    margin: 0.5em 0;
+}
+
+.chef-profile h3 {
+    margin-top: 1.5em;
+    color: #333;
+    border-bottom: 2px solid rgba(244, 32, 32, 0.5);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Available Timings */
+.chef-profile ul {
+    list-style: none;
+    padding: 0;
+}
+
+.chef-profile ul li {
+    font-size: 1em;
+    color: #444;
+    margin: 5px 0;
+}
+
+/* Dish Container */
+.dish-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+    margin-top: 1.5em;
+}
+
+/* Dish Cards */
+.dish-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1em;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.dish-card:hover {
+    transform: translateY(-5px);
+}
+
+.dish-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.dish-card p {
+    color: #d71313;
+    font-size: 0.9em;
+}
+
+.dish-card strong {
+    display: block;
+    color: rgba(244, 32, 32, 0.8);
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Order Now Button */
+button {
+    background-color: rgba(244, 32, 32, 0.8);
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1.5em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(244, 32, 32, 1);
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bengaluru Home Chef Marketplace</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse-chefs.html">Browse Chefs</a></li>
+                <li><a href="browse-meals.html">Browse Meals</a></li>
+                <li><a href="become-a-chef.html">Become a Chef</a></li>
+                <li><a href="my-orders.html">My Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chef-profile">
+            <img src="neha.jpg" alt="Chef Neha" class="profile-img">
+            <h2>Chef Neha</h2>
+            <p><strong>Specialty:</strong> Vegan Cuisine</p>
+            <p><strong>Experience:</strong> Passionate about vegan cooking. Offering plant-based meals that are both healthy and delicious!</p>
+            <p><strong>Ratings:</strong> ★★★☆☆</p>
+            <p><strong>Starting Price:</strong> ₹150 per meal</p>
+
+            <h3>Available Timings:</h3>
+            <ul>
+                <li>Monday - Friday: 10:00 AM - 2:00 PM</li>
+                <li>Saturday - Sunday: 11:00 AM - 3:00 PM</li>
+            </ul>
+
+            <h3>Available Dishes:</h3>
+            <div class="dish-container">
+                <!-- Vegan Burrito Bowl -->
+                <div class="dish-card">
+                    <img src="vegan-burrito-bowl.jpg" alt="Vegan Burrito Bowl">
+                    <p><strong>Vegan Burrito Bowl</strong></p>
+                    <p>A wholesome and nutritious plant-based burrito bowl filled with rice, beans, veggies, and salsa.</p>
+                    <p class="price">₹150</p>
+                    <button>Order Now</button>
+                </div>
+
+                <!-- Chickpea Salad -->
+                <div class="dish-card">
+                    <img src="chickpea-salad.jpg" alt="Chickpea Salad">
+                    <p><strong>Chickpea Salad</strong></p>
+                    <p>A refreshing salad with chickpeas, veggies, and a zesty lemon dressing.</p>
+                    <p class="price">₹120</p>
+                    <button>Order Now</button>
+                </div>
+
+                <!-- Tofu Stir Fry -->
+                <div class="dish-card">
+                    <img src="tofu-stir-fry.jpg" alt="Tofu Stir Fry">
+                    <p><strong>Tofu Stir Fry</strong></p>
+                    <p>Stir-fried tofu with a mix of colorful veggies and a savory sauce.</p>
+                    <p class="price">₹180</p>
+                    <button>Order Now</button>
+                </div>
+
+                <!-- Vegan Pancakes -->
+                <div class="dish-card">
+                    <img src="vegan-pancakes.jpg" alt="Vegan Pancakes">
+                    <p><strong>Vegan Pancakes</strong></p>
+                    <p>Soft and fluffy vegan pancakes served with your choice of toppings.</p>
+                    <p class="price">₹100</p>
+                    <button>Order Now</button>
+                </div>
+
+                <!-- Vegan Buddha Bowl -->
+                <div class="dish-card">
+                    <img src="vegan-buddha-bowl.jpg" alt="Vegan Buddha Bowl">
+                    <p><strong>Vegan Buddha Bowl</strong></p>
+                    <p>A wholesome and nutritious plant-based bowl filled with rice, beans, veggies, and a flavorful sauce.</p>
+                    <p class="price">₹200</p>
+                    <button>Order Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bengaluru Home Chef Marketplace</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengaluru Home Chef Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><i>Bengaluru Home Chef Marketplace</i></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse-chefs.html">Browse Chefs</a></li>
+                <li><a href="browse-meals.html">Browse Meals</a></li>
+                <li><a href="become-a-chef.html">Become a Chef</a></li>
+                <li><a href="my-orders.html">My Orders</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="location.html">Location</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="parallax-section">
+        <div class="parallax-content">
+            <h2>Welcome to the Best Home-Cooked Meals!</h2>
+            <p>Experience the flavors of authentic home-cooked dishes from expert chefs.</p>
+        </div>
+    </section>
+    
+    <main>
+        <section id="hero">
+            <div class="search-container">
+                <input type="text" id="location-input" placeholder="Enter your location">
+                <button onclick="searchChefs()">Search</button>
+                <button onclick="getUserLocation()">Use My Location</button>
+            </div>
+            <p id="location-status"></p>
+        </section>
+        <section id="featured-chefs">
+            <h2>Featured Home Chefs</h2>
+            <div class="chef-grid">
+                <!-- Existing Chef Priya Card -->
+                <div class="chef-card">
+                    <img src="priya.jpg" alt="Chef Priya">
+                    <h3>Chef Priya</h3>
+                    <p>Specializes in South Indian Cuisine</p>
+                    <p>★★★★☆</p>
+                    <p>Starting at ₹80 per meal</p>
+                    <a href="chef-priya.html"><button>View Profile</button></a>
+                </div>
+
+                <!-- New Chef Rohan Card -->
+                <div class="chef-card">
+                    <img src="rohan.jpg" alt="Chef Rohan">
+                    <h3>Chef Rohan</h3>
+                    <p>Specializes in North Indian Cuisine</p>
+                    <p>★★★★★</p>
+                    <p>Starting at ₹250 per meal</p>
+                    <a href="chef-rohan.html"><button>View Profile</button></a>
+                </div>
+            </div>
+
+            <!-- View All Chefs Link -->
+            <div class="view-all-chefs">
+                <a href="browse-chefs.html"><button>View All Chefs</button></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bengaluru Home Chef Marketplace</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

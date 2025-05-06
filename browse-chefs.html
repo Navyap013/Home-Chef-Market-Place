@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Chefs - Bengaluru Home Chef Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bengaluru Home Chef Marketplace</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse-chefs.html">Browse Chefs</a></li>
+                <li><a href="browse-meals.html">Browse Meals</a></li>
+                <li><a href="become-a-chef.html">Become a Chef</a></li>
+                <li><a href="my-orders.html">My Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Browse All Chefs</h2>
+        <p>Here you can browse all the chefs available on the platform and find the one that suits your tastes and preferences!</p>
+
+        <!-- Filter and Search Section -->
+        <section id="filters">
+            <h3>Filter Chefs</h3>
+            <div class="filter-section">
+                <input type="text" id="search" placeholder="Search by name, cuisine, or dish..." />
+                <select id="cuisine-type">
+                    <option value="">Select Cuisine</option>
+                    <option value="indian">Indian</option>
+                    <option value="italian">Italian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="halal">Halal</option>
+                </select>
+                <select id="dietary-preferences">
+                    <option value="">Select Dietary Preferences</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="keto">Keto</option>
+                    <option value="gluten-free">Gluten-Free</option>
+                </select>
+                <div>
+                    <label for="price-range">Price Range:</label>
+                    <input type="range" id="price-range" min="0" max="500" value="250">
+                    <span id="price-value">₹250</span>
+                </div>
+                <button id="filter-btn">Apply Filters</button>
+            </div>
+        </section>
+
+        <!-- Chef Grid -->
+        <section id="chef-grid">
+            <div class="chef-grid">
+                <!-- Chef 1 -->
+                <div class="chef-card">
+                    <a href="chef-priya.html">
+                        <img src="priya.jpg" alt="Chef Priya">
+                        <div class="info">
+                            <h3>Chef Priya</h3>
+                            <p>Specializes in South Indian Cuisine. With over 10 years of experience in preparing authentic dishes like Idli, Dosa, and more.</p>
+                            <p class="ratings">★★★★☆</p>
+                            <p class="price">Starting at ₹80 per meal</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Chef 2 -->
+                <div class="chef-card">
+                    <a href="chef-rohan.html">
+                        <img src="rohan.jpg" alt="Chef Rohan">
+                        <div class="info">
+                            <h3>Chef Rohan</h3>
+                            <p>Expert in North Indian cuisine, specializing in Butter Chicken, Rogan Josh, and more!</p>
+                            <p class="ratings">★★★★★</p>
+                            <p class="price">Starting at ₹250 per meal</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Chef 3 -->
+                <div class="chef-card">
+                    <a href="chef-neha.html">
+                        <img src="neha.jpg" alt="Chef Neha">
+                        <div class="info">
+                            <h3>Chef Neha</h3>
+                            <p>Passionate about vegan cooking. Offering plant-based meals that are both healthy and delicious!</p>
+                            <p class="ratings">★★★☆☆</p>
+                            <p class="price">Starting at ₹150 per meal</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Chef 4 -->
+                <div class="chef-card">
+                    <a href="chef-manoj.html">
+                        <img src="manoj.jpg" alt="Chef Manoj">
+                        <div class="info">
+                            <h3>Chef Manoj</h3>
+                            <p>Specializing in Italian dishes with a modern twist. Enjoy handcrafted pastas and pizzas made from the finest ingredients!</p>
+                            <p class="ratings">★★★★☆</p>
+                            <p class="price">Starting at ₹300 per meal</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Chef 5 -->
+                <div class="chef-card">
+                    <a href="chef-anita.html">
+                        <img src="anita.jpg" alt="Chef Anita">
+                        <div class="info">
+                            <h3>Chef Anita</h3>
+                            <p>Expert in authentic Punjabi cuisine, specializing in rich and flavorful dishes like Chole Bhature and Sarson Da Saag.</p>
+                            <p class="ratings">★★★★☆</p>
+                            <p class="price">Starting at ₹180 per meal</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bengaluru Home Chef Marketplace</p>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const cuisineFilter = document.getElementById("cuisine-type");
+    const dietaryFilter = document.getElementById("dietary-preferences");
+    const searchInput = document.getElementById("search");
+    const chefCards = document.querySelectorAll(".chef-card");
+
+    // Function to filter chefs
+    function filterChefs() {
+        let selectedCuisine = cuisineFilter.value.toLowerCase();
+        let selectedDiet = dietaryFilter.value.toLowerCase();
+        let searchQuery = searchInput.value.toLowerCase();
+
+        chefCards.forEach((card) => {
+            let chefName = card.querySelector("h3").textContent.toLowerCase();
+            let description = card.querySelector("p").textContent.toLowerCase();
+
+            let matchesSearch = searchQuery
+                ? chefName.includes(searchQuery) || description.includes(searchQuery)
+                : true;
+            let matchesCuisine = selectedCuisine ? description.includes(selectedCuisine) : true;
+            let matchesDiet = selectedDiet ? description.includes(selectedDiet) : true;
+
+            if (matchesSearch && matchesCuisine && matchesDiet) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+
+    // Attach event listeners
+    cuisineFilter.addEventListener("change", filterChefs);
+    dietaryFilter.addEventListener("change", filterChefs);
+    searchInput.addEventListener("input", filterChefs);
+});
+    </script>
+</body>
+</html>
