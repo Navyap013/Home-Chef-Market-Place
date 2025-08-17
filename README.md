@@ -15,5 +15,3 @@ A full-stack web application that connects home chefs with local customers looki
 - Order Cart & Checkout Simulation
 - Admin/Chef Dashboard
 
-## 📬 Contact
-Navya – navyap304@gmail.com | https://www.linkedin.com/in/navya-p-44b499307/
