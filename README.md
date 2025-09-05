@@ -44,13 +44,13 @@ Home-Chef-Market-Place/
 
 Usage Flow
 
-Chefs sign up and build their profile—adding dishes and personal details.
+1.Chefs sign up and build their profile—adding dishes and personal details.
 
-Customers explore listings, apply filters, and place meal orders.
+2. Customers explore listings, apply filters, and place meal orders.
 
-Orders are handled and tracked by the backend; chefs manage order fulfillment.
+3. Orders are handled and tracked by the backend; chefs manage order fulfillment.
 
-Customers provide feedback and reviews post-delivery.
+4. Customers provide feedback and reviews post-delivery.
 
 Contributing
 
