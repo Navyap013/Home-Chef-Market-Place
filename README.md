@@ -51,3 +51,17 @@ Customers explore listings, apply filters, and place meal orders.
 Orders are handled and tracked by the backend; chefs manage order fulfillment.
 
 Customers provide feedback and reviews post-delivery.
+
+Contributing
+
+Contributions are celebrated! Please follow this workflow:
+
+Fork the repository.
+
+Create a new branch: git checkout -b feature/your-feature.
+
+Commit with a descriptive message: git commit -m "Add [feature]".
+
+Push the branch: git push origin feature/your-feature.
+
+Open a Pull Request. I’ll review and merge at the earliest.
