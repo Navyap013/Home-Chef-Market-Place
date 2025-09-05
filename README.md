@@ -31,3 +31,23 @@ npm run dev       # Launches frontend in development mode
 cd ../server
 npm install
 npm run dev       # Launches backend (e.g., on http://localhost:5000)
+
+
+Navigate to http://localhost:3000 (or your specified port) to explore the platform.
+
+Project Structure
+Home-Chef-Market-Place/
+├── client/               # Frontend application (React/Angular/Vue)
+├── server/               # Backend API, authentication, order logic
+├── README.md             # Project overview
+├── package.json          # Root-level commands & settings (if applicable)
+
+Usage Flow
+
+Chefs sign up and build their profile—adding dishes and personal details.
+
+Customers explore listings, apply filters, and place meal orders.
+
+Orders are handled and tracked by the backend; chefs manage order fulfillment.
+
+Customers provide feedback and reviews post-delivery.
